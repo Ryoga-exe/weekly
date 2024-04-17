@@ -27,7 +27,34 @@ label {
   line-height: 1.1;
 }
 
+p {
+  margin-block-end: 1rem;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+}
+
+code:not([class]) {
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-size: 85%;
+  white-space: break-spaces;
+  border-radius: 6px;
+}
+
+table {
+  margin-block-end: 1rem;
+  border-spacing: 0;
+  border-collapse: collapse;
+  display: block;
+  inline-size: max-content;
+  max-inline-size: 100%;
+  overflow: auto;
+}
+
 .container {
+  inline-size: 100%;
   max-inline-size: 42rem;
   padding-inline: 1rem;
   margin-inline: auto;
@@ -48,7 +75,7 @@ header {
 footer {
   inline-size: 100%;
   margin-block-start: auto;
-  padding-block: 1rem;
+  padding-block: 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;

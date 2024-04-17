@@ -13,11 +13,115 @@ $accent-dark: #959bf0;
 @mixin light-theme {
   color: $foreground;
   background: $background;
+
+  .secondary {
+    color: $secondary;
+  }
+
+  a,
+  a:link,
+  a:visited {
+    color: $accent;
+  }
+
+  a:hover {
+    color: darken($accent, 30%);
+  }
+
+  blockquote {
+    border-inline-start: .25em solid $secondary;
+    padding-inline-start: 1em;
+    margin-block-end: 1rem;
+    color: $secondary;
+  }
+
+  code {
+    background: $tertiary;
+  }
+
+  pre code {
+    background: transparent;
+  }
+
+  .footnote-definition sup {
+    color: $secondary;
+  }
+
+  table {
+    font-size: 1rem;
+
+    tr {
+      border-block-start: 1px solid $tertiary;
+    }
+
+    th,
+    td {
+      padding: 0.3em 1em;
+      border: 1px solid $tertiary;
+    }
+
+    thead,
+    tr:nth-child(even) {
+      background-color: lighten($tertiary, 3%);
+    }
+  }
 }
 
 @mixin dark-theme {
   color: $foreground-dark;
   background: $background-dark;
+
+  .secondary {
+    color: $secondary-dark;
+  }
+
+  a,
+  a:link,
+  a:visited {
+    color: $accent-dark;
+  }
+
+  a:hover {
+    color: darken($accent-dark, 10%);
+  }
+
+  blockquote {
+    border-inline-start: .25em solid $secondary-dark;
+    padding-inline-start: 1em;
+    margin-block-end: 1rem;
+    color: $secondary-dark;
+  }
+
+  code {
+    background: $tertiary-dark;
+  }
+
+  pre code {
+    background: transparent;
+  }
+
+  .footnote-definition sup {
+    color: $secondary-dark;
+  }
+
+  table {
+    font-size: 1rem;
+
+    tr {
+      border-block-start: 1px solid $tertiary-dark;
+    }
+
+    th,
+    td {
+      padding: 0.3em 1em;
+      border: 1px solid $tertiary-dark;
+    }
+
+    thead,
+    tr:nth-child(even) {
+      background-color: darken($tertiary-dark, 15%);
+    }
+  }
 }
 
 @media (prefers-color-scheme: light) {
