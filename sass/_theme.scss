@@ -32,19 +32,15 @@ $accent-dark: #959bf0;
   }
 }
 
-.theme-switcher {
+#theme-switcher {
   display: block;
-
-  button {
-    display: block;
-    inline-size: 1.5rem;
-    margin: 0;
-    padding: 0;
-    border: none;
-    color: currentColor;
-    background: transparent;
-    cursor: pointer;
-  }
+  inline-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+  border: none;
+  color: currentColor;
+  background: transparent;
+  cursor: pointer;
 
   svg {
     display: block;
@@ -54,11 +50,31 @@ $accent-dark: #959bf0;
 }
 
 body {
-  &:not([data-theme="dark"]) {
-    @include dark-theme;
+  &[data-theme="light"] {
+    @include light-theme;
+
+    #theme-switcher {
+      .light {
+        display: none;
+      }
+
+      .dark {
+        display: block;
+      }
+    }
   }
 
   &[data-theme="dark"] {
     @include dark-theme;
+
+    #theme-switcher {
+      .light {
+        display: block;
+      }
+
+      .dark {
+        display: none;
+      }
+    }
   }
 }
