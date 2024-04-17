@@ -55,7 +55,7 @@ select {
 }
 
 textarea:not([rows]) {
-  min-height: 10em;
+  min-block-size: 10em;
 }
 
 :target {
