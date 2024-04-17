@@ -27,6 +27,15 @@ label {
   line-height: 1.1;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-block: 1rem;
+}
+
 p {
   margin-block-end: 1rem;
 }
@@ -77,6 +86,7 @@ header {
 
   h1 {
     font-size: 2rem;
+    margin: 0;
   }
 }
 

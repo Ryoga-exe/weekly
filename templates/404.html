@@ -1,1 +1,9 @@
 {% extends "index.html" %}
+
+{% block title %} 404 Not found | {{ config.title }}{% endblock title %}
+
+
+{% block main %}
+<h2>404 - Not found</h2>
+<p class="secondary">The page you were looking for could not be found. <a href="/">Back to top</a></p>
+{% endblock main %}
