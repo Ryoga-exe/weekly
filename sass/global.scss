@@ -43,6 +43,14 @@ code:not([class]) {
   border-radius: 6px;
 }
 
+pre[class^="language"] {
+  padding: 1rem;
+  font-size: 85%;
+  overflow: auto;
+  line-height: 1.45;
+  border-radius: 6px;
+}
+
 table {
   margin-block-end: 1rem;
   border-spacing: 0;
