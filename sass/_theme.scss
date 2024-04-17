@@ -41,11 +41,16 @@ $accent-dark: #959bf0;
   color: currentColor;
   background: transparent;
   cursor: pointer;
+  transition: opacity 0.3s;
 
   svg {
     display: block;
     inline-size: 100%;
     block-size: 100%;
+  }
+
+  &:hover {
+    opacity: 0.7;
   }
 }
 
