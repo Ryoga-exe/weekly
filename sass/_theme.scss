@@ -1,0 +1,64 @@
+$foreground: #222;
+$background: #eee;
+$secondary: #808080;
+$tertiary: #ddd;
+$accent: #3d3cba;
+
+$foreground-dark: #eee;
+$background-dark: #161616;
+$secondary-dark: #999;
+$tertiary-dark: #444;
+$accent-dark: #959bf0;
+
+@mixin light-theme {
+  color: $foreground;
+  background: $background;
+}
+
+@mixin dark-theme {
+  color: $foreground-dark;
+  background: $background-dark;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    @include light-theme;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    @include dark-theme;
+  }
+}
+
+.theme-switcher {
+  display: block;
+
+  button {
+    display: block;
+    inline-size: 1.5rem;
+    margin: 0;
+    padding: 0;
+    border: none;
+    color: currentColor;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  svg {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+  }
+}
+
+body {
+  &:not([data-theme="dark"]) {
+    @include dark-theme;
+  }
+
+  &[data-theme="dark"] {
+    @include dark-theme;
+  }
+}
