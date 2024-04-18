@@ -82,7 +82,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-block: 3rem;
+  padding-block: min(3rem, 7vw);
 
   h1 {
     font-size: 2rem;
