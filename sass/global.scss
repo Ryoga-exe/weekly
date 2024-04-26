@@ -9,7 +9,7 @@ body {
 
 body {
   font-family: "Noto Sans JP", Lato, Roboto, Arial, Helvetica, sans-serif;
-  font-size: 14pt;
+  // font-size: 14pt;
   line-height: 1.5;
   display: flex;
   flex-direction: column;
@@ -33,7 +33,31 @@ h3,
 h4,
 h5,
 h6 {
-  margin-block: 1rem;
+  margin-block: 2rem 1rem;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.25em;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+h5 {
+  font-size: 0.875em;
+}
+
+h6 {
+  font-size: 0.85em;
 }
 
 p {
@@ -82,7 +106,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-block: min(3rem, 7vw);
+  padding-block: min(3rem, 8vw);
 
   h1 {
     font-size: 2rem;
