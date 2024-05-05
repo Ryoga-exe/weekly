@@ -72,7 +72,7 @@ ac-library-zig を空き時間にちまちま実装したりして segtree を�
 テストを書くのを頑張った。ところで本家にはあるアサートを入れていないことに気づいた。
 いろいろ調べてみると、`std.debug.assert()` というものがあり、内部実装を読んでみると以下のようなコメントが付いていた
 
-```
+```text
 /// This function invokes undefined behavior when `ok` is `false`.
 /// In Debug and ReleaseSafe modes, calls to this function are always
 /// generated, and the `unreachable` statement triggers a panic.
