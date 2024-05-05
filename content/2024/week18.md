@@ -26,6 +26,35 @@ date = 2024-05-05
 やはりチャーハンが楽で美味しく作れるのでとてもよい。
 普段はラードを使って作っているが、鶏皮を買ってそれを焼いて鶏油を取り出して代わりにそれを使って作ってみたがこれが意外と良かった。
 
+## x86 エミュレータ自作
+
+書きはじめた。現状はまじで簡単な命令だけを実行できるだけであるが、[x86-emu](https://github.com/Ryoga-exe/x86-emu) というリポジトリで細々と作っている。
+大学の図書館から借りた「自作エミュレータで学ぶ x86 アーキテクチャ」という本をやりながら進めているがかなりいい感じ。
+
+なんとこれまた Zig で書いているのだがやはり辛い部分がちょっとある。
+
+実装においては Zig の面白い部分も活用していて、例えば以下に示すコードとかがそれである。
+C とかでこういったものを実装する際には enum の最後にその大きさを表す `FOOBAR_NUM` みたいなのを入れると思うが、
+Zig は enum の中に定数を入れれるのと `std.meta.fields` というやつがあるので、よりわかりやすい感じになることに気づいた。
+
+```zig
+pub const Register = enum {
+    EAX,
+    ECX,
+    EDX,
+    EBX,
+    ESP,
+    EBP,
+    ESI,
+    EDI,
+
+    pub const len = @import("std").meta.fields(@This()).len;
+    pub const name = @import("std").meta.fieldNames(@This());
+};
+```
+
+面白い。
+
 ## その他
 
 AC 部屋に行くとなぜか木工作業がされていた。
@@ -39,13 +68,31 @@ kawaii ロゴが巷で流行っていたので jsys のロゴを作ってみた�
 友人に勧められて購入した Fog of World というアプリが面白くて、霧を晴らすために散歩している。
 健康が増進されてとてもよいのだが、これって手段と目的というか何かが逆転していないか…？と感じてしまっている。
 
+ac-library-zig を空き時間にちまちま実装したりして segtree をついに実装した。([#3](https://github.com/Ryoga-exe/ac-library-zig/pull/3))
+テストを書くのを頑張った。ところで本家にはあるアサートを入れていないことに気づいた。
+いろいろ調べてみると、`std.debug.assert()` というものがあり、内部実装を読んでみると以下のようなコメントが付いていた
+
+```
+/// This function invokes undefined behavior when `ok` is `false`.
+/// In Debug and ReleaseSafe modes, calls to this function are always
+/// generated, and the `unreachable` statement triggers a panic.
+/// In ReleaseFast and ReleaseSmall modes, calls to this function are
+/// optimized away, and in fact the optimizer is able to use the assertion
+/// in its heuristics.
+/// Inside a test block, it is best to use the `std.testing` module rather
+/// than this function, because this function may not detect a test failure
+/// in ReleaseFast and ReleaseSmall mode. Outside of a test block, this assert
+/// function is the correct function to use.
+```
+
+らしいので割とまじでこれを使うべきだな～となった。
+
 ## 目標の振り返り
 
 - 部屋を少しでいいので片付ける
   - まじでほんのちょっとだけ片付けた。ただ本当にちょっとだけなのでもっと腰を上げて片付けを行ったほうがよいのかもしれない。
 - x86 アーキテクチャについて学んでエミュレータを書く
-  - 書きはじめた。現状はまじで簡単な命令だけを実行できるだけであるが、[x86-emu](https://github.com/Ryoga-exe/x86-emu) というリポジトリで細々と作っている。
-  - 大学の図書館から借りた「自作エミュレータで学ぶ x86 アーキテクチャ」という本をやりながら進めているがかなりいい感じ。
+  - 前述の通り書きはじめた。
 - 自作ゲームのためのコントローラのプロトタイプの作成
   - やってない
 - そぽたん展に出すための作品作りに手を出す
