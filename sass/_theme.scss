@@ -3,12 +3,14 @@ $background: #eee;
 $secondary: #808080;
 $tertiary: #ddd;
 $accent: #3d3cba;
+$alert-success: #00b67e;
 
 $foreground-dark: #eee;
 $background-dark: #161616;
 $secondary-dark: #999;
 $tertiary-dark: #444;
 $accent-dark: #959bf0;
+$alert-success-dark: #00b67e;
 
 @mixin light-theme {
   color: $foreground;
@@ -29,10 +31,17 @@ $accent-dark: #959bf0;
   }
 
   blockquote {
-    border-inline-start: .25em solid $secondary;
+    border-inline-start: 0.25em solid $secondary;
     padding-inline-start: 1em;
     margin-block-end: 1rem;
     color: $secondary;
+  }
+
+  input[type="checkbox"]:disabled {
+    background: $secondary;
+    &:checked {
+      background: $alert-success;
+    }
   }
 
   code {
@@ -86,10 +95,17 @@ $accent-dark: #959bf0;
   }
 
   blockquote {
-    border-inline-start: .25em solid $secondary-dark;
+    border-inline-start: 0.25em solid $secondary-dark;
     padding-inline-start: 1em;
     margin-block-end: 1rem;
     color: $secondary-dark;
+  }
+
+  input[type="checkbox"]:disabled {
+    background: $secondary-dark;
+    &:checked {
+      background: $alert-success-dark;
+    }
   }
 
   code {
