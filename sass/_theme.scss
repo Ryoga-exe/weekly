@@ -74,6 +74,10 @@ $alert-success-dark: #00b67e;
       background-color: lighten($tertiary, 3%);
     }
   }
+
+  a.rss {
+    color: $foreground;
+  }
 }
 
 @mixin dark-theme {
@@ -137,6 +141,10 @@ $alert-success-dark: #00b67e;
     tr:nth-child(even) {
       background-color: darken($tertiary-dark, 15%);
     }
+  }
+
+  a.rss {
+    color: $foreground-dark;
   }
 }
 
