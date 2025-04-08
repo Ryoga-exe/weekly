@@ -1,6 +1,5 @@
 name: Deploy
 
-
 on:
   push:
     branches: ["main"]
@@ -25,7 +24,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Build
-        uses: shalzz/zola-deploy-action@v0.18.0
+        uses: shalzz/zola-deploy-action@v0.20.0
         env:
           BUILD_ONLY: true
       - name: Setup Pages
