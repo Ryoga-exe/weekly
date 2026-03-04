@@ -15,7 +15,7 @@ date = 2026-02-01
 発表したものは、自作 RISC-V CPU の上で自作 OS を動かす、といったもの。
 自作 CPU は <https://github.com/Ryoga-exe/ChiffonCore> に、自作 OS は <https://github.com/Ryoga-exe/ChiffonOS> で公開している。
 
-{{ tweet(url="https://x.com/Ryoga_exe/status/2016927733419483356") }}
+{{ tweet(url="https://twitter.com/Ryoga_exe/status/2016927733419483356") }}
 
 一応 SNS に載せたのは、グラフィック周りが動く前の段階のもの。
 この後、描画回路を叩けるようになって、いろいろなデモを動かせるようになった。
