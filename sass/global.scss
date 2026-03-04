@@ -75,7 +75,7 @@ code {
     monospace;
 }
 
-code:not([class]) {
+code:not([data-lang]) {
   padding: 0.2em 0.4em;
   margin: 0;
   font-size: 85%;
@@ -83,7 +83,7 @@ code:not([class]) {
   border-radius: 6px;
 }
 
-pre[class^="language"] {
+pre[class^="giallo"] {
   padding: 1rem;
   font-size: 85%;
   overflow: auto;
