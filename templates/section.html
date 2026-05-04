@@ -2,7 +2,6 @@
 
 {% block main %}
 <main>
-  <h1>{{ section.title }}</h1>
   {% if section.pages %}
   {% for year, posts in section.pages | group_by(attribute="year") %}
   <h2>{{ year }}</h2>
