@@ -1,3 +1,4 @@
+{% import "macros/cjk.html" as cjk %}
 {% extends "index.html" %}
 
 {% block title %}{{ config.title }} | {{ page.title }}{% endblock title %}
@@ -9,5 +10,5 @@
     <p class="secondary">{{ page.date | date(format="%Y-%m-%d") }}</p>
   {% endif %}
   <div class="space"></div>
-  {{ page.content | safe }}
+  {{ cjk::unbreak(html=page.content) }}
 {% endblock main %}

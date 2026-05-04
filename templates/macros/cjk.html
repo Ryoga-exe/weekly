@@ -1,0 +1,9 @@
+{% macro unbreak(html) %}
+{{ html
+  | regex_replace(
+      pattern=`([\p{Han}\p{Hiragana}\p{Katakana}，。；：！？‘’“”（）「」【】…—、。，．・々〆〤ー])\r?\n([\p{Han}\p{Hiragana}\p{Katakana}，。；：！？‘’“”（）「」【】…—、。，．・々〆〤ー])`,
+      rep=`$1$2`
+  )
+  | safe
+}}
+{% endmacro %}
