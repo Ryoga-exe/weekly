@@ -168,3 +168,34 @@ footer {
     font-size: 0.875rem;
   }
 }
+
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-block: 3rem 1rem;
+  padding-block-start: 1.5rem;
+  border-block-start: 1px solid currentColor;
+  border-color: rgba(128, 128, 128, 0.3);
+
+  a {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    max-inline-size: 48%;
+    text-decoration: none;
+
+    &:hover .title {
+      text-decoration: underline;
+    }
+
+    .label {
+      font-size: 0.875rem;
+    }
+  }
+
+  .next {
+    margin-inline-start: auto;
+    text-align: end;
+  }
+}
