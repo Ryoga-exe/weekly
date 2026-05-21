@@ -73,4 +73,4 @@ OSANPO というプレイリストとかいいと思う。おすすめ。
 最近は Magic Keyboard の分解とかしてみている。
 
 あと、この週報を少しいじった。
-[記事にもした](https://zenn.dev/ryoga_exe/articles/zola-cjk-unbreak)。有用かはわからないが、今年はアウトプットを増やしてみようと思う。
+一部[記事にもした](https://zenn.dev/ryoga_exe/articles/zola-cjk-unbreak)。有用かはわからないが、今年はアウトプットを増やしてみようと思う。
